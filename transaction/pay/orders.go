@@ -1,16 +1,7 @@
 package pay
 
-// Status order status
-type Status int
-
-const (
-	Invalid = iota
-	Created
-	Paying
-	Void
-	Succeed
-	Refunding
-	Refunded
+import (
+	"github.com/blademainer/distributed-transaction-demo/transaction/status"
 )
 
 // Order pay order
@@ -18,7 +9,7 @@ type Order struct {
 	ID       string
 	Amount   string
 	Currency string
-	Status   Status
+	Status   status.Status
 }
 
 // Orders orders svc
