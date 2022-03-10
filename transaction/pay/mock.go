@@ -2,6 +2,7 @@ package pay
 
 import (
 	"github.com/blademainer/distributed-transaction-demo/mock/rpc"
+	"github.com/blademainer/distributed-transaction-demo/transaction/status"
 )
 
 type mockedOrders struct {
@@ -9,7 +10,7 @@ type mockedOrders struct {
 }
 
 // NewOrdersServer create orders service
-func NewOrdersServer(rpc rpc.RPC) Orders {
+func NewOrdersServer(rpc rpc.RPC) Service {
 	orders := &mockedOrders{
 		rpc: rpc,
 	}
@@ -26,7 +27,7 @@ func (m *mockedOrders) Create(req *Order) (rsp *Order, err error) {
 		ID:       req.ID,
 		Amount:   req.Amount,
 		Currency: req.Currency,
-		Status:   Created,
+		Status:   status.Created,
 	}
 	return
 }
@@ -40,7 +41,7 @@ func (m *mockedOrders) Pay(req *Order) (rsp *Order, err error) {
 		ID:       req.ID,
 		Amount:   req.Amount,
 		Currency: req.Currency,
-		Status:   Succeed,
+		Status:   status.Succeed,
 	}
 	return
 }

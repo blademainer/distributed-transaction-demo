@@ -12,8 +12,8 @@ type Order struct {
 	Status   status.Status
 }
 
-// Orders orders svc
-type Orders interface {
+// Service orders svc
+type Service interface {
 	// Create order
 	Create(req *Order) (rsp *Order, err error)
 
