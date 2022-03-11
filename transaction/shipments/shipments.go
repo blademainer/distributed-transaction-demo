@@ -10,3 +10,9 @@ type Shipment struct {
 	Amount  string
 	Status  status.Status
 }
+
+// Service shipment service
+type Service interface {
+	// Shipment order
+	Shipment(shipment *Shipment) error
+}

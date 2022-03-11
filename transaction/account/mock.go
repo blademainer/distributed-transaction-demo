@@ -11,8 +11,8 @@ type mocked struct {
 	accounts *sync.Map
 }
 
-// NewOrdersServer create orders service
-func NewOrdersServer(rpc rpc.RPC) Service {
+// NewAccountServer create Account service
+func NewAccountServer(rpc rpc.RPC) Service {
 	orders := &mocked{
 		rpc:      rpc,
 		accounts: &sync.Map{},
