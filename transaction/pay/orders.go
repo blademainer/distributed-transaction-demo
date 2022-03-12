@@ -4,6 +4,8 @@ import (
 	"github.com/blademainer/distributed-transaction-demo/transaction/status"
 )
 
+const kind = "pay"
+
 // Order pay order
 type Order struct {
 	ID       string

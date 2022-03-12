@@ -10,6 +10,6 @@ type configuredMockRPC struct {
 	ErrorPercent    int
 }
 
-func (c *configuredMockRPC) Invoke(req interface{}) (interface{}, error) {
+func (c *configuredMockRPC) Invoke(kind string, key string, req interface{}) (interface{}, error) {
 	panic("implement me")
 }

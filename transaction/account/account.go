@@ -1,5 +1,7 @@
 package account
 
+const kind = "account"
+
 // Account info
 type Account struct {
 	ID    string

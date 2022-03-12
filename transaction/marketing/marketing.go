@@ -4,6 +4,8 @@ import (
 	"github.com/blademainer/distributed-transaction-demo/transaction/status"
 )
 
+const kind = "marketing"
+
 // Coupon coupon info
 type Coupon struct {
 	ID             string

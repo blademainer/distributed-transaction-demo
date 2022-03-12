@@ -21,7 +21,7 @@ func NewAccountServer(rpc rpc.RPC) Service {
 }
 
 func (m *mocked) AddValue(accountID string, value string) error {
-	_, err := m.rpc.Invoke([]string{accountID, value})
+	_, err := m.rpc.Invoke(kind, accountID, value)
 	if err != nil {
 		return err
 	}
